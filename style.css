@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap');
+@font-face {
+  font-family: Norse-Bold;
+  src: url(./Norse-Bold.otf);
+}
+
+:root {
+  --white-font: #ffffff;
+  --grey-font: #65657b;
+  --body-bg: #e6e6e6;
+  --form-bg: #15172b;
+}
 
 *,
 *::before,
@@ -6,45 +16,109 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Comic Neue', cursive;
+  font-family: Norse-Bold, cursive, sans-serif;
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--body-bg);
 }
 .container {
-  width: 300px;
-  background-color: rgb(230, 230, 230);
+  width: 400px;
+  height: 480px;
+  display: flex;
 }
 form {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 25px;
-  gap: 30px;
+  gap: 20px;
+  background-color: var(--form-bg);
 }
 h2 {
+  font-size: 48px;
   text-align: center;
+  text-transform: uppercase;
+  color: var(--white-font);
 }
 .input-field {
   display: flex;
   flex-direction: column;
 }
 input {
-  width: 100%;
+  width: 250px;
   padding: 10px;
   font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
 }
 label {
+  font-size: 18px;
+  color: var(--grey-font);
+  text-transform: uppercase;
   order: -1;
   transform: translateX(10px) translateY(33px);
   pointer-events: none;
-  transition: all 0.5s ease-in;
+  transition: all 0.4s ease-in;
 }
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
-  transform: translateX(5px) translateY(-3px);
+  transform: translateX(-5px) translateY(-3px) scale(0.9);
+  color: var(--white-font);
+}
+.form-btn {
+  width: 250px;
+}
+.btn {
+  width: 100%;
+  font-size: 18px;
+  margin: 12px 0;
+  border: none;
+  font-size: 24px;
+  color: var(--white-font);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 14px -7px #276873;
+  background: linear-gradient(to bottom, #5454f5 5%, #0a17c7 100%);
+  background-color: #5454f5;
+  cursor: pointer;
+  font-size: 20px;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, #0a17c7 5%, #5454f5 100%);
+  background-color: #408c99;
+}
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+.logo-section {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100px;
+  height: 100%;
+  background-color: #cd9641;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+img {
+  width: 75px;
+}
+.logo-text {
+  font-size: 24px;
+  color: var(--white-font);
 }
