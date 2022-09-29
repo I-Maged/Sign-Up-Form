@@ -1,13 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap');
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive;
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+.container {
+  width: 300px;
+  background-color: rgb(230, 230, 230);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  gap: 30px;
+}
+h2 {
+  text-align: center;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+label {
+  order: -1;
+  transform: translateX(10px) translateY(33px);
+  pointer-events: none;
+  transition: all 0.5s ease-in;
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  transform: translateX(5px) translateY(-3px);
 }
